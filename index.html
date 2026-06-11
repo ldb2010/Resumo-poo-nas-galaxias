@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo POO</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bb8.css">
+</head>
+<body>
+
+<header>
+    <h1>Programação Orientada a Objetos</h1>
+
+    <label class="bb8-toggle">
+        <input id="theme-toggle"
+               class="bb8-toggle__checkbox"
+               type="checkbox">
+
+        <div class="bb8-toggle__container">
+            <div class="bb8-toggle__scenery">
+                <div class="bb8-toggle__star"></div>
+                <div class="bb8-toggle__star"></div>
+                <div class="bb8-toggle__star"></div>
+                <div class="bb8-toggle__star"></div>
+                <div class="bb8-toggle__star"></div>
+                <div class="bb8-toggle__star"></div>
+                <div class="bb8-toggle__star"></div>
+
+                <div class="tatto-1"></div>
+                <div class="tatto-2"></div>
+
+                <div class="gomrassen"></div>
+                <div class="hermes"></div>
+                <div class="chenini"></div>
+
+                <div class="bb8-toggle__cloud"></div>
+                <div class="bb8-toggle__cloud"></div>
+                <div class="bb8-toggle__cloud"></div>
+            </div>
+
+            <div class="bb8">
+                <div class="bb8__head-container">
+                    <div class="bb8__antenna"></div>
+                    <div class="bb8__antenna"></div>
+                    <div class="bb8__head"></div>
+                </div>
+
+                <div class="bb8__body"></div>
+            </div>
+
+            <div class="artificial__hidden">
+                <div class="bb8__shadow"></div>
+            </div>
+        </div>
+    </label>
+</header>
+
+<nav>
+    <a href="#POO">POO</a>
+    <a href="#Classe">Classe</a>
+    <a href="#Objeto">Objeto</a>
+    <a href="#Construtor">Construtor</a>
+    <a href="#Atributos">Atributos</a>
+    <a href="#Metodos">Métodos</a>
+    <a href="#Encapsulamento">Encapsulamento</a>
+    <a href="#MetodoEstatico">Método Estático</a>
+    <a href="#Sobrecarga">Sobrecarga</a>
+    <a href="#Polimorfismo">Polimorfismo</a>
+</nav>
+
+<main>
+
+    <h2 id="POO">O que é POO</h2>
+    <ul>
+        <li>Paradigma de programação</li>
+        <li>Organização do código em objetos</li>
+        <li>Reutilização de código</li>
+        <li>Facilita a manutenção e evolução do software</li>
+    </ul>
+    <h2 id="Classe">Classe</h2>
+    <ul>
+        <li>Modelo ou molde para criar objetos</li>
+        <li>Define atributos e métodos</li>
+        <li>Exemplo: Classe "Carro" com atributos "cor", "modelo" e método "acelerar()"</li>
+        <img src="src/classe_sw.png" alt="">
+    </ul>
+    <h2 id="Objeto">Objeto</h2>
+    <ul>
+        <li>Instância de uma classe</li>
+        <li>Possui estado (atributos) e comportamento (métodos)</li>
+        <li>Exemplo: Objeto "meuCarro" da classe "Carro" com cor "vermelho" e modelo "sedan"</li>
+    </ul>
+    <img src="src/objeto_sw.png" alt="">
+
+    <h2 id="Construtor">Construtor</h2>
+    <ul>
+        <li>Método especial para inicializar objetos</li>
+        <li>Geralmente tem o mesmo nome da classe</li>
+        <li>Exemplo: Construtor da classe "Carro" que recebe parâmetros para definir a cor e modelo do carro</li>
+    </ul>
+    <img src="src/construtor_sw.png" alt="">
+
+    <h2 id="Atributos">Atributos</h2>
+    <ul>
+        <li>Propriedades que definem o estado de um objeto</li>
+        <li>Podem ser públicos, privados ou protegidos</li>
+        <li>Exemplo: Atributo "cor" da classe "Carro"</li>
+    </ul>
+    <img src="src/atributos_sw.png" alt="">
+
+    <h2 id="Metodos">Métodos</h2>
+    <ul>
+        <li>Funções que definem o comportamento de um objeto</li>
+        <li>Podem ser públicos, privados ou protegidos</li>
+        <li>Exemplo: Método "acelerar()" da classe "Carro"</li>
+    </ul>
+    <img src="src/metodo_sw.png" alt="">
+
+
+    <h2 id="Encapsulamento">Encapsulamento</h2>
+    <ul>
+        <li>Técnica de ocultar os detalhes de implementação de um objeto</li>
+        <li>Permite controlar o acesso aos atributos e métodos</li>
+        <li>Exemplo: Usar métodos getters e setters para acessar e modificar atributos</li>
+    </ul>
+    <img src="src/encapsulamento_sw.png" alt="">
+
+    <h2 id="Sobrecarga">Sobrecarga</h2>
+    <ul>
+        <li>Recursos que permite ter múltiplos métodos com o mesmo nome</li>
+        <li>Diferem pelo número ou tipo de parâmetros</li>
+        <li>Exemplo: Métodos "calcularArea()" com diferentes parâmetros</li>
+    </ul>
+    <img src="src/sobrecarga_sw.png" alt="">
+
+    <h2 id="Polimorfismo">Polimorfismo</h2>
+    <ul>
+        <li>Capacidade de um objeto de assumir várias formas</li>
+        <li>Permite tratar objetos de diferentes classes através de uma interface comum</li>
+        <li>Exemplo: Método "calcularArea()" sendo implementado de forma diferente para diferentes classes</li>
+    </ul>
+
+</main>
+
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark-mode");
+    toggle.checked = true;
+}
+
+toggle.addEventListener("change", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        localStorage.setItem("theme","dark");
+    }else{
+        localStorage.setItem("theme","light");
+    }
+
+});
+</script>
+
+</body>
+</html>
